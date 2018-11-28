@@ -14,6 +14,12 @@
     <meta property="og:description"   content="melona is very delicious" />
     <meta property="og:image"         content="http://ossw.iptime.org/assets/images_cardnews/bird.gif" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<meta name="twitter:title" content="제목" />
+    <meta name="twitter:description" content="설명" />
+    <meta name="twitter:image" content="대표 이미지" />
+    <meta name="twitter:card" content="트위터 카드 타입" />
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -21,8 +27,11 @@
 
 	<div id="fb-root"></div>
     <script>
-		function sharing () {
+		function sharingfacebook () {
 			window.open('http://www.facebook.com/sharer/sharer.php?u=http://ossw.iptime.org/politics.html');
+		}
+		function sharingtwitter () {
+			window.open('http://twitter.com/intent/tweet?text=http://ossw.iptime.org/politics.html');
 		}
 	</script>
 		<!-- Wrapper -->
@@ -70,7 +79,9 @@
 						<div class="inner">
 							<h1>POLITICS</h1>
 							<span class="image main"><img src="assets/images/pic13.jpg" alt="" /></span>
-							<span onclick="sharing();"><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></span>
+							<span onclick="sharingfacebook();"><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></span>
+							<span onclick="sharingtwitter();"><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></span>
+							<br></br>
 							<a href="cardnewsexample.html" class="logo">
 								<span class="symbol"><img src="assets/images_cardnews/bird.gif" alt="" /></span>
 							</a>
