@@ -40,6 +40,15 @@
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
+				<div id="fb-root"></div>
+			    <script>
+					function sharingfacebook () {
+						window.open('http://www.facebook.com/sharer/sharer.php?u=http://ossw.iptime.org/politics.html');
+					}
+					function sharingtwitter () {
+						window.open('http://twitter.com/intent/tweet?text=http://ossw.iptime.org/politics.html');
+					}
+				</script>
 
 				<!-- Header -->
 					<header id="header">
@@ -82,6 +91,9 @@
 					<div id="main">
 						<div class="inner">
 							<h1>Culture</h1>
+							<span onclick="sharingfacebook();"><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></span>
+							<span onclick="sharingtwitter();"><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></span>
+							<br></br>
 							<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
 								<!-- Indicators -->
 								<ol class="carousel-indicators">
