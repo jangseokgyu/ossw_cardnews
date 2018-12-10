@@ -18,5 +18,6 @@ echo '자세한 디버깅 정보입니다:';
 print_r($_FILES);
 print "</pre>";
 ?>
+<img src="images_cardnews/<?=$_FILES['userfile']['name']?>" />
 </body>
 </html>
