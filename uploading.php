@@ -6,7 +6,7 @@
 <body>
 <?php
 ini_set("display_errors", "1");
-$uploaddir = 'C:\BitNami\wampstack-5.4.20-0\apache2\htdocs\ossw_cardnews\assets\images_cardnews\\';
+$uploaddir = 'C:\BitNami\wampstack-7.1.23-0\apache2\htdocs\ossw_cardnews\assets\images_cardnews\\';
 $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 echo '<pre>';
 if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
