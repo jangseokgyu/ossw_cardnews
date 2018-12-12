@@ -106,10 +106,11 @@
 							<br></br>
 							<br></br>
 							<br></br>
-							<form action="uploading.php" method="post" enctype="multipart/form-data">
-								<label for="file">Filename:</label>
-								<input type="file" name="file" id="file"><br>
-								<input type="submit" name="submit" value="Submit">
+							<form enctype="multipart/form-data" action="uploading.php" method="POST">
+								<input type="hidden" name="MAX_FILE_SIZE" value="90000" />
+								<input name="userfile" type="file" />
+								<br></br>
+								<input type="submit" value="upload" />
 							</form>
 						</div>
 					</div>

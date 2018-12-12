@@ -1,47 +1,23 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+    <meta charset="utf-8"/>
+</head>
 <body>
-  <?php
-  $allowedExts = array("gif", "jpeg", "jpg", "png");
-
-  if (isset($_FILES)) {
-      $file = $_FILES["file"];
-      $error = $file["error"];
-      $name = $file["name"];
-      $type = $file["type"];
-      $size = $file["size"];
-      $tmp_name = $file["tmp_name"];
-
-      if ( $error > 0 ) {
-          echo "Error: " . $error . "<br>";
-      }
-      else {
-          $temp = explode(".", $name);
-          $extension = end($temp);
-
-          if ( ($size/1024/1024) < 2.) || in_array($extension, $allowedExts) ) {
-              //echo "Upload: " . $name . "<br>";
-              //echo "Type: " . $type . "<br>";
-              //echo "Size: " . ($size / 1024 / 1024) . " Mb<br>";
-              //echo "Stored in: " . $tmp_name;
-              if (file_exists("upload/" . $name)) {
-                  echo $name . " already exists. ";
-              }
-              else {
-                  move_uploaded_file($tmp_name, "upload/" . $name);
-                  echo "Stored in: " . "upload/" . $name;
-              }
-          }
-          else {
-              echo ($size/1024/1024) . " Mbyte is bigger than 2 Mb ";
-              echo $extension . "format file is not allowed to upload ! ";
-          }
-      }
-  }
-  else {
-      echo "File is not selected";
-  }
-  ?> 
+<?php
+ini_set("display_errors", "1");
+$uploaddir = 'C:\Bitnami\wampstack-7.1.23-0\apache2\htdocs\ossw_cardnews\assets\images_cardnews\\';
+$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+echo '<pre>';
+if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+    echo "파일이 유효하고, 성공적으로 업로드 되었습니다.\n";
+} else {
+    print "파일 업로드 공격의 가능성이 있습니다!\n";
+}
+echo '자세한 디버깅 정보입니다:';
+print_r($_FILES);
+print "</pre>";
+?>
+<img src = "file/<?=$_FILES['userfile']['name']?>" />
 </body>
 </html>
